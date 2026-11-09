@@ -16,6 +16,18 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--almost-black);
+  color: var(--almost-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--almost-black);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 body {
@@ -329,8 +341,8 @@ button {
 }
 
 .btn--primary:hover {
-  background: var(--medium-gray);
-  color: var(--almost-black);
+  background: #3a3a3a;
+  color: #fff;
 }
 
 /* Hero */
@@ -415,7 +427,7 @@ button {
 
 /* Attribution */
 .attribution {
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
   padding: 1.5rem 1rem;
   color: var(--medium-gray);

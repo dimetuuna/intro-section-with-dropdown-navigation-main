@@ -103,4 +103,11 @@
       }
     });
   });
+
+  // close mobile menu when resizing to desktop
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 900px)").matches && primaryNav.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
 })();
