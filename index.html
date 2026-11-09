@@ -2,38 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="/" aria-label="Home">
+        <img src="./images/logo.svg" alt="Snap">
+      </a>
 
-  Features
-  Company
-  Careers
-  About
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <img src="./images/icon-menu.svg" alt="">
+      </button>
 
-  Login
-  Register
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
 
-  Make remote work
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item has-dropdown">
+            <button class="nav__toggle" aria-expanded="false" aria-controls="featuresMenu">
+              Features
+              <img class="chevron" src="./images/icon-arrow-down.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="dropdown" id="featuresMenu" hidden>
+              <li><a href="#"><img src="./images/icon-todo.svg" alt="" aria-hidden="true"> Todo List</a></li>
+              <li><a href="#"><img src="./images/icon-calendar.svg" alt="" aria-hidden="true"> Calendar</a></li>
+              <li><a href="#"><img src="./images/icon-reminders.svg" alt="" aria-hidden="true"> Reminders</a></li>
+              <li><a href="#"><img src="./images/icon-planning.svg" alt="" aria-hidden="true"> Planning</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-dropdown">
+            <button class="nav__toggle" aria-expanded="false" aria-controls="companyMenu">
+              Company
+              <img class="chevron" src="./images/icon-arrow-down.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="dropdown" id="companyMenu" hidden>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#">Careers</a></li>
+          <li class="nav__item"><a href="#">About</a></li>
+        </ul>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+        <div class="auth auth--mobile">
+          <a href="#" class="btn btn--ghost">Login</a>
+          <a href="#" class="btn btn--outline btn--block">Register</a>
+        </div>
+      </nav>
 
-  Learn more
-  
+      <div class="auth auth--desktop">
+        <a href="#" class="btn btn--ghost">Login</a>
+        <a href="#" class="btn btn--outline">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1>Make remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+          <a href="#" class="btn btn--primary">Learn more</a>
+          <div class="clients">
+            <img src="./images/client-databiz.svg" alt="Databiz">
+            <img src="./images/client-audiophile.svg" alt="Audiophile">
+            <img src="./images/client-meet.svg" alt="Meet">
+            <img src="./images/client-maker.svg" alt="Maker">
+          </div>
+        </div>
+        <div class="hero__image">
+          <picture>
+            <source media="(min-width: 900px)" srcset="./images/image-hero-desktop.png">
+            <img src="./images/image-hero-mobile.png" alt="Team collaborating remotely">
+          </picture>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/dimetuuna">Pablo Bermejo</a>.
   </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
